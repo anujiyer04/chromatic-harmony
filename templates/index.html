@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromatic Harmony | Music Universe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Main background elements -->
+    <div class="universe-container">
+        <div class="stars"></div>
+        <div class="nebula"></div>
+        <div class="sound-waves"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Interactive color picker orb -->
+    <div class="color-sphere-container">
+        <div class="color-sphere">
+            <div class="sphere-core"></div>
+            <div class="orbit"></div>
+            <div class="primary-color-ring"></div>
+        </div>
+        <div class="picker-container">
+            <input type="color" id="color-picker" value="#1DB954">
+            <div class="color-hex-display">#1DB954</div>
+        </div>
+    </div>
+
+    <!-- Main interface container -->
+    <main class="interface-container">
+        <header class="interface-header">
+            <div class="logo">
+                <span class="logo-text">CHROMATIC<span class="accent">HARMONY</span></span>
+                <div class="logo-underline"></div>
+            </div>
+            <div class="auth-controls">
+                <button id="login-btn" class="neon-button">
+                    <span class="button-glow"></span>
+                    <span class="button-text">CONNECT</span>
+                </button>
+                <button id="switch-account-btn" class="neon-button secondary">
+                    <span class="button-glow"></span>
+                    <span class="button-text">SWITCH PROFILE</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="main-control-panel">
+            <div class="panel-section">
+                <h1 class="panel-title">COLOR MOOD<span class="accent">SYNC</span></h1>
+                <p class="panel-description">Select a color frequency to generate a harmonized audio spectrum</p>
+                
+                <div class="action-buttons">
+                    <button id="get-playlist" class="primary-action">
+                        <div class="button-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9.5 8.5L14.5 12L9.5 15.5V8.5Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span>GENERATE PLAYLIST</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Holographic playlist display -->
+        <section class="holographic-display">
+            <div class="display-header">
+                <h2 class="playlist-title">SONIC<span class="accent">SPECTRUM</span></h2>
+                <div class="display-controls">
+                    <button id="save-playlist" class="holo-button">
+                        <span class="holo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H14.5858C14.851 3 15.1054 3.10536 15.2929 3.29289L20.7071 8.70711C20.8946 8.89464 21 9.149 21 9.41421V19C21 20.1046 20.1046 21 19 21Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8.6 9H15.4C15.7314 9 16 8.73137 16 8.4V3.6C16 3.26863 15.7314 3 15.4 3H8.6C8.26863 3 8 3.26863 8 3.6V8.4C8 8.73137 8.26863 9 8.6 9Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 13.6V21H18V13.6C18 13.2686 17.7314 13 17.4 13H6.6C6.26863 13 6 13.2686 6 13.6Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </span>
+                        <span>SAVE TO SPOTIFY</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="playlist-container" class="playlist-tracks">
+                <!-- Tracks will be populated here -->
+                <div class="placeholder-message">
+                    <div class="placeholder-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18V6L21 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="18" cy="15" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <p>Select a color to discover your mood-based tracks</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Audio visualizer elements -->
+    <div class="audio-visualizer">
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+        <div class="visualizer-bar"></div>
+    </div>
+</body>
+</html>
