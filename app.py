@@ -143,10 +143,7 @@ def color_distance(color1, color2):
     print(f"delta_e: {delta_e}, type: {type(delta_e)}")  # Debugging line
     
     # Ensure delta_e is a scalar
-    if not isinstance(delta_e, (float, int)):
-        raise ValueError("delta_e is not a scalar value.")
-    
-    return delta_e
+    return delta_e.item() if isinstance(delta_e, np.ndarray) else delta_e
 
 def closest_color(hex_color):
     weights = {}
