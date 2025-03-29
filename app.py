@@ -11,7 +11,6 @@ from colormath.color_objects import LabColor, sRGBColor
 from colormath.color_conversions import convert_color
 from colormath.color_diff import delta_e_cie2000
 import numpy as np
-from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
