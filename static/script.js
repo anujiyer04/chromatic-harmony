@@ -1,4 +1,4 @@
-const backendURL = "https://your-backend-url.onrender.com";
+const backendURL = "https://chromatic-harmony.onrender.com";
 document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements
     const styleElement = document.createElement('style');
