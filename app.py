@@ -12,6 +12,11 @@ from colormath.color_conversions import convert_color
 from colormath.color_diff import delta_e_cie2000
 import numpy as np
 
+def patch_asscalar(a):
+    return a.item()
+
+setattr(np, "asscalar", patch_asscalar)
+
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
@@ -136,14 +141,14 @@ def rgb_to_lab(rgb_color):
 def color_distance(color1, color2):
     lab1 = rgb_to_lab(hex_to_rgb(color1))
     lab2 = rgb_to_lab(hex_to_rgb(color2))
-    
-    # Using CIEDE2000 for more accurate color difference calculation
+
+    # Using CIEDE2000 for accurate color difference calculation
     delta_e = delta_e_cie2000(lab1, lab2)
-    
+
     print(f"delta_e: {delta_e}, type: {type(delta_e)}")  # Debugging line
-    
-    # Ensure delta_e is a scalar
-    return delta_e.item() if isinstance(delta_e, np.ndarray) else delta_e
+
+    # Ensure delta_e is returned as a scalar
+    return np.asscalar(delta_e) if isinstance(delta_e, np.ndarray) else delta_e
 
 def closest_color(hex_color):
     weights = {}
