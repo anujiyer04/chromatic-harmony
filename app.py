@@ -590,4 +590,5 @@ def save_playlist():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.getenv("PORT", 5000))  # Get PORT from environment, default 5000
+    app.run(host="0.0.0.0", port=port, debug=True)  # ✅ Bind to 0.0.0.0 for Render
