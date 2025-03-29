@@ -1,3 +1,4 @@
+const backendURL = "https://your-backend-url.onrender.com";
 document.addEventListener('DOMContentLoaded', function() {
     // DOM Elements
     const styleElement = document.createElement('style');
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function checkLoginStatus() {
-        fetch('/check_login')
+        fetch(`${backendURL}/check_login`)
             .then(response => response.json())
             .then(data => {
                 isLoggedIn = data.logged_in;
@@ -179,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         activateVisualizer();
         
         // Make API call to get playlist
-        fetch('/get_playlist', {
+        fetch(`${backendURL}/get_playlist`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -405,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get track URIs
         const trackUris = currentTracks.map(track => track.uri);
         
-        fetch('/save_playlist', {
+        fetch(`${backendURL}/save_playlist`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
